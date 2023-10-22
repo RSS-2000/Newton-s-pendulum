@@ -17,33 +17,33 @@ function startAnimation() {
 
 
     let isAnimatingFirstBall = true;
+    let  speed = 0.6;
     const audioElement = document.querySelector('audio')
     function toggleAnimation() {
         if (isAnimatingFirstBall) {
             firstBall.style.animation = 'none';
             leftTop.style.animation = 'none';
             leftBott.style.animation = 'none';
-            rightTop.style.animation = 'thread-top5 0.6s linear infinite alternate-reverse';
-            rightBott.style.animation = 'thread-bott5 0.6s linear infinite alternate-reverse';
-            lastBall.style.animation = 'ball-2 0.6s linear infinite alternate-reverse';
+            rightTop.style.animation = `thread-top5 ${speed}s ease-in infinite alternate-reverse`;
+            rightBott.style.animation = `thread-bott5 ${speed}s ease-in infinite alternate-reverse`;
+            lastBall.style.animation = `ball-2 ${speed}s ease-in infinite alternate-reverse`;
         } else {
             lastBall.style.animation = 'none';
             rightTop.style.animation = 'none';
             rightBott.style.animation = 'none';
-            leftTop.style.animation = 'thread-top1 0.6s linear infinite';
-            leftBott.style.animation = 'thread-bott1 0.6s linear infinite alternate-reverse';
-
-            firstBall.style.animation = 'ball-1 0.6s linear infinite alternate-reverse';
+            leftTop.style.animation = `thread-top1 ${speed}s ease-in infinite alternate-reverse`;
+            leftBott.style.animation = `thread-bott1 ${speed}s ease-in infinite alternate-reverse`;
+            firstBall.style.animation = `ball-1 ${speed}s ease-in infinite alternate-reverse`;
         }
         isAnimatingFirstBall = !isAnimatingFirstBall;
         audioElement.play();
     }
     toggleAnimation();
-    setInterval(toggleAnimation, 600);
+    setInterval(toggleAnimation, speed * 1000);
     audioElement.play();
 }
 
 let clikBall = document.querySelector('.ball-three')
 clikBall.addEventListener('click', () => {
-    setTimeout(() => { startAnimation() }, 200)
+    setTimeout(() => { startAnimation(),200 })
 });
