@@ -27,6 +27,7 @@ function startAnimation() {
             rightTop.style.animation = `thread-top5 ${speed}s ease-in infinite alternate-reverse`;
             rightBott.style.animation = `thread-bott5 ${speed}s ease-in infinite alternate-reverse`;
             lastBall.style.animation = `ball-2 ${speed}s ease-in infinite alternate-reverse`;
+            audioElement.play();
         } else {
             lastBall.style.animation = 'none';
             rightTop.style.animation = 'none';
@@ -34,13 +35,12 @@ function startAnimation() {
             leftTop.style.animation = `thread-top1 ${speed}s ease-in infinite alternate-reverse`;
             leftBott.style.animation = `thread-bott1 ${speed}s ease-in infinite alternate-reverse`;
             firstBall.style.animation = `ball-1 ${speed}s ease-in infinite alternate-reverse`;
+            audioElement.play();
         }
         isAnimatingFirstBall = !isAnimatingFirstBall;
-        audioElement.play();
     }
     toggleAnimation();
     setInterval(toggleAnimation, speed * 1000);
-    audioElement.play();
 }
 
 let clikBall = document.querySelector('.ball-three')
