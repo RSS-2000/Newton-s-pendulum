@@ -17,7 +17,7 @@ function startAnimation() {
 
 
     let isAnimatingFirstBall = true;
-    let  speed = 0.6;
+    let speed = 0.6;
     const audioElement = document.querySelector('audio')
     function toggleAnimation() {
         if (isAnimatingFirstBall) {
@@ -27,7 +27,9 @@ function startAnimation() {
             rightTop.style.animation = `thread-top5 ${speed}s ease-in infinite alternate-reverse`;
             rightBott.style.animation = `thread-bott5 ${speed}s ease-in infinite alternate-reverse`;
             lastBall.style.animation = `ball-2 ${speed}s ease-in infinite alternate-reverse`;
+            audioElement.load();
             audioElement.play();
+            isAnimatingFirstBall = false;
         } else {
             lastBall.style.animation = 'none';
             rightTop.style.animation = 'none';
@@ -35,15 +37,15 @@ function startAnimation() {
             leftTop.style.animation = `thread-top1 ${speed}s ease-in infinite alternate-reverse`;
             leftBott.style.animation = `thread-bott1 ${speed}s ease-in infinite alternate-reverse`;
             firstBall.style.animation = `ball-1 ${speed}s ease-in infinite alternate-reverse`;
+            audioElement.load();
             audioElement.play();
+            isAnimatingFirstBall = true;
         }
-        isAnimatingFirstBall = !isAnimatingFirstBall;
     }
-    toggleAnimation();
     setInterval(toggleAnimation, speed * 1000);
 }
 
 let clikBall = document.querySelector('.ball-three')
 clikBall.addEventListener('click', () => {
-    setTimeout(() => { startAnimation(),200 })
+    startAnimation()
 });
