@@ -7,3 +7,8 @@
 ___
 **Link:**
  [You can see it on the website](https://rss-2000.github.io/Newton-s-pendulum/)
+
+___
+### Screenshot
+
+<img src="./image/penbulum.png" width="50%">
