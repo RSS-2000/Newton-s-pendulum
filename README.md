@@ -6,7 +6,7 @@
 * [X] css
 ___
 **Link:**
- [You can see it on the website](https://rss-2000.github.io/Newton-s-pendulum/)
+ [You can see it on the website](https://rss-777.github.io/Newton-s-pendulum/)
 
 ___
 ### Screenshot
